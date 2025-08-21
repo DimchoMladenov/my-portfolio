@@ -13,12 +13,18 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">DM</a>
+                <a href="#home" class="logo-symbol">
+                    <span class="logo-stack">
+                        <span class="logo-top">δ</span>
+                        <span class="logo-bottom">μ</span>
+                    </span>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#articles" class="nav-link">Articles</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -40,14 +46,11 @@
                     Seasoned IT professional with over 20 years of experience in people and project management, 
                     specializing in driving operational efficiency through innovative change management strategies.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Experience</a>
-                </div>
             </div>
             <div class="hero-image">
                 <div class="profile-placeholder">
-                    <i class="fas fa-user-tie"></i>
+                    <img src="images/profile.jpg" alt="Dimcho Mladenov" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <i class="fas fa-user-tie" style="display:none"></i>
                 </div>
             </div>
         </div>
@@ -71,7 +74,7 @@
                     </p>
                     <p>
                         My expertise extends to ERP, Warehouse Management, Supply Chain, Master Data, Inventory Management, 
-                        Fulfillment, eCommerce, data integrations, and analytics. This comprehensive background enables me 
+                        Fulfillment, eCommerce, iGaming, Crypto & fiat payments, blockchain, KYC & AML, data integrations, and analytics. This comprehensive background enables me 
                         to deliver impactful solutions across diverse business domains.
                     </p>
                 </div>
@@ -82,7 +85,7 @@
                     </div>
                     <div class="stat">
                         <h3>PhD</h3>
-                        <p>Change Management</p>
+                        <p>Software Development</p>
                     </div>
                     <div class="stat">
                         <h3>MBA</h3>
@@ -100,111 +103,157 @@
             <div class="experience-timeline">
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Senior Product Owner</h3>
-                        <h4>Live Interactive Software</h4>
-                        <span class="experience-date">June 2024 - Present</span>
-                        <span class="experience-location">Sofia, Bulgaria</span>
+                        <div class="company-logo">
+                            <img src="logo.png" alt="Live Interactive Software" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'background: #0066cc; color: white; padding: 8px; border-radius: 4px; font-weight: bold; font-size: 10px; text-align: center; line-height: 1.2;\'>LIS</div>'">
+                        </div>
+                        <div class="experience-header-content">
+                            <h3>Senior Product Owner</h3>
+                            <h4>Live Interactive Software</h4>
+                        </div>
                     </div>
                     <div class="experience-content">
-                        <p>Lead end-to-end product lifecycle management, owning roadmaps and driving delivery of features that enhance user engagement, retention, and monetization across all gaming verticals.</p>
-                        <ul>
-                            <li>Deep knowledge of crypto payment systems, traditional fiat banking, and real-time currency conversion</li>
-                            <li>Experience with CRM systems, affiliate marketing platforms, and third-party APIs</li>
-                            <li>Strong focus on security, fraud prevention, and compliance</li>
-                            <li>Expertise in designing dual-currency systems and social features</li>
-                        </ul>
+                        <p>Development of iGaming platform, experience with CRM systems, affiliate marketing platforms, social login solutions and third-party APIs to maximize player acquisition and lifetime value. Strong focus on security, fraud prevention, and compliance, working closely with KYC/AML teams to ensure products meet global regulatory standards in multiple jurisdictions.</p>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>IT Manager</h3>
-                        <h4>NEXT BASKET</h4>
-                        <span class="experience-date">July 2023 - May 2024</span>
-                        <span class="experience-location">Sofia Metropolitan Area</span>
+                        <div class="company-logo">
+                            <img src="download.png" alt="NEXT BASKET" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'background: #2563eb; color: white; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 12px; text-align: center;\'>NEXT<br>BASKET</div>'">
+                        </div>
+                        <div class="experience-header-content">
+                            <h3>IT Manager</h3>
+                            <h4>NEXT BASKET</h4>
+                        </div>
                     </div>
                     <div class="experience-content">
-                        <p>Driving the development of ERP/WMS systems and integration with e-commerce platform.</p>
-                        <ul>
-                            <li>Master data architecture (SKU, GTIN, Product prices and characteristics)</li>
-                            <li>Integration with DHL, Speedy (DPD), Econt, and other shipping providers</li>
-                            <li>Order fulfillment flow end-to-end and payment flow management</li>
-                            <li>Inventory management, audit and forecasting</li>
-                        </ul>
+                        <p>Leading the development of ERP \ WMS systems and the integration with e-commerce platform.</p>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Product Owner</h3>
-                        <h4>REWE Digital Bulgaria</h4>
-                        <span class="experience-date">November 2017 - July 2023</span>
-                        <span class="experience-location">Sofia, Bulgaria</span>
+                        <div class="company-logo">
+                            <img src="https://logos-world.net/wp-content/uploads/2020/11/REWE-Logo.png" alt="REWE Digital" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'background: #e30613; color: white; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 14px;\'>REWE</div>'">
+                        </div>
+                        <div class="experience-header-content">
+                            <h3>Senior Product Owner</h3>
+                            <h4>REWE Digital</h4>
+                        </div>
                     </div>
                     <div class="experience-content">
-                        <p>Management of digital product development in e-commerce/e-delivery platform.</p>
-                        <ul>
-                            <li>Warehouse Management System (WMS) and inventory management</li>
-                            <li>Demand forecasting and preventing Out of Stock (OoS)</li>
-                            <li>Working with Google Cloud, Java, and microservices architecture</li>
-                            <li>Definition of OKRs and KPIs for EBIT estimation</li>
-                        </ul>
+                        <p>Designing, developing and rolling out tailor made Warehouse Management System for multiple Food Fulfillment Centers.</p>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Product Owner</h3>
-                        <h4>KPMG IT Service OOD</h4>
-                        <span class="experience-date">December 2016 - October 2017</span>
-                        <span class="experience-location">Sofia, Bulgaria</span>
+                        <div class="company-logo">
+                            <img src="https://logos-world.net/wp-content/uploads/2020/04/KPMG-Logo.png" alt="KPMG IT Service OOD" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'background: #00338d; color: white; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 14px;\'>KPMG</div>'">
+                        </div>
+                        <div class="experience-header-content">
+                            <h3>Product Owner</h3>
+                            <h4>KPMG IT Service OOD</h4>
+                        </div>
                     </div>
                     <div class="experience-content">
-                        <p>Product Owner for Private Cloud based on Microsoft technologies and standardization solution for internal compliance.</p>
-                        <ul>
-                            <li>Working based on SCRUM framework</li>
-                            <li>ITIL change management process participation</li>
-                            <li>Microsoft Cloud Solutions expertise (Azure, OMS, System Center)</li>
-                            <li>Product roadmap definition and stakeholder management</li>
-                        </ul>
+                        <p>Product Owner working based on SCRUM framework. Responsible for the development of Private Cloud based on Microsoft technologies and standardization solution for internal compliance.</p>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Cloud Infrastructure Solution Sales Professional</h3>
-                        <h4>Microsoft</h4>
-                        <span class="experience-date">May 2016 - November 2016</span>
-                        <span class="experience-location">Bulgaria</span>
+                        <div class="company-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png" alt="Microsoft" onerror="this.style.display='none'">
+                        </div>
+                        <div class="experience-header-content">
+                            <h3>Cloud Infrastructure Solution Sales Professional</h3>
+                            <h4>Microsoft</h4>
+                        </div>
                     </div>
                     <div class="experience-content">
-                        <p>Driving revenue and market share by providing customers with insights and solutions leveraging the Microsoft Cloud Platform.</p>
-                        <ul>
-                            <li>Microsoft Azure, Azure Stack, Windows Server expertise</li>
-                            <li>System Center and Operations Management Suite</li>
-                            <li>Microsoft Cognitive Service solutions</li>
-                            <li>Datacenter modernization and cloud infrastructure</li>
-                        </ul>
+                        <p>As Cloud Infrastructure SSP I was driving revenue and market share by providing customers with insights and solutions leveraging the Microsoft Cloud Platform offerings including Microsoft Azure, Azure Stack, Windows Server, System Center and Operations Management Suite to meet their datacenter modernization and cloud infrastructure needs. I was also covering Microsoft Cognitive Service solutions like face, emotions, speech, language recognition.</p>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Chief Engineer / Enterprise Architect</h3>
-                        <h4>Hewlett Packard Enterprise</h4>
-                        <span class="experience-date">June 2014 - April 2016</span>
-                        <span class="experience-location">Sofia, Bulgaria</span>
+                        <div class="company-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Hewlett_Packard_Enterprise_logo.svg/200px-Hewlett_Packard_Enterprise_logo.svg.png" alt="Hewlett Packard Enterprise" onerror="this.style.display='none'">
+                        </div>
+                        <div class="experience-header-content">
+                            <h3>Chief Engineer / Enterprise Architect</h3>
+                            <h4>Hewlett Packard Enterprise</h4>
+                        </div>
                     </div>
                     <div class="experience-content">
-                        <p>Managing team of capability leads for different technologies to ensure coherent processes and solutions.</p>
-                        <ul>
-                            <li>ISO 9001, QMS and proper KPIs implementation</li>
-                            <li>Working with customer Enterprise Architects</li>
-                            <li>Helping retail customers achieve digital transformation</li>
-                            <li>Account vision and direction alignment</li>
-                        </ul>
+                        <p>Managing team of capability leads for different technologies to ensure coherent processes and solution. Ensure ISO 9001, QMS and proper KPIs are in place. Working closely with customer Enterprise Architects to ensure account vision and direction are correct. Helping retail customer achieve digital transformation.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <h2 class="section-title">Articles & Publications</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <h3>How to Avoid the Common Sense Trap</h3>
+                    <p>An insightful exploration of cognitive biases and decision-making pitfalls that professionals encounter in their daily work, offering practical strategies to overcome the "common sense trap" and make better informed decisions.</p>
+                    <div class="article-tags">
+                        <span class="tag">Decision Making</span>
+                        <span class="tag">Cognitive Bias</span>
+                        <span class="tag">Professional Development</span>
+                    </div>
+                    <a href="https://medium.com/@dimchomladenov/how-to-avoid-the-common-sense-trap-7a334c7cd439" target="_blank" class="btn btn-outline btn-small">Read on Medium</a>
+                </article>
+
+                <article class="article-card">
+                    <h3>The First Rule for a Successful Startup is Organizational Efficiency</h3>
+                    <p>Essential insights on how organizational efficiency serves as the foundation for startup success, exploring key strategies and frameworks that enable sustainable growth and competitive advantage.</p>
+                    <div class="article-tags">
+                        <span class="tag">Startup</span>
+                        <span class="tag">Organizational Efficiency</span>
+                        <span class="tag">Business Strategy</span>
+                    </div>
+                    <a href="https://medium.com/@dimchomladenov/the-first-rule-for-a-successful-startup-is-organizational-efficiency-272d3dd66d21" target="_blank" class="btn btn-outline btn-small">Read on Medium</a>
+                </article>
+
+                <article class="article-card">
+                    <h3>Beyond Agility: Foundations for Organizational Effectiveness</h3>
+                    <p>A deep dive into the fundamental principles that drive organizational effectiveness beyond traditional agile methodologies, exploring sustainable frameworks for long-term success.</p>
+                    <div class="article-tags">
+                        <span class="tag">Organizational Effectiveness</span>
+                        <span class="tag">Agile</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                    <a href="https://medium.com/@dimchomladenov/beyond-agility-foundations-for-organizational-effectiveness-ef011c1021f2" target="_blank" class="btn btn-outline btn-small">Read on Medium</a>
+                </article>
+
+                <article class="article-card">
+                    <h3>Mastering Project Forecasting with Scrum Velocity</h3>
+                    <p>A comprehensive guide to leveraging Scrum velocity metrics for accurate project forecasting, helping teams improve predictability and deliver consistent results in agile environments.</p>
+                    <div class="article-tags">
+                        <span class="tag">Scrum</span>
+                        <span class="tag">Project Forecasting</span>
+                        <span class="tag">Velocity</span>
+                    </div>
+                    <a href="https://medium.com/@dimchomladenov/mastering-project-forecasting-with-scrum-velocity-3b58299f25ab" target="_blank" class="btn btn-outline btn-small">Read on Medium</a>
+                </article>
+
+                <article class="article-card">
+                    <h3>20 Year Paradigm Shifts in the IT Industry</h3>
+                    <p>A comprehensive analysis of the major technological and methodological shifts that have transformed the IT industry over the past two decades, exploring their impact on business and society.</p>
+                    <div class="article-tags">
+                        <span class="tag">IT Industry</span>
+                        <span class="tag">Technology Trends</span>
+                        <span class="tag">Digital Transformation</span>
+                    </div>
+                    <a href="https://medium.com/20-year-paradigm-shifts-in-the-it-industry/20-year-paradigm-shifts-in-the-it-industry-578a5670e79c" target="_blank" class="btn btn-outline btn-small">Read on Medium</a>
+                </article>
+
             </div>
         </div>
     </section>
@@ -222,6 +271,18 @@
                         <span class="skill-item">Waterfall</span>
                         <span class="skill-item">Agile</span>
                         <span class="skill-item">Lean</span>
+                        <span class="skill-item">ITIL</span>
+                        <span class="skill-item">TOGAF</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>IT Service Management</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Change Management</span>
+                        <span class="skill-item">ISO 9001</span>
+                        <span class="skill-item">QMS</span>
+                        <span class="skill-item">KPI Management</span>
                         <span class="skill-item">OKRs</span>
                         <span class="skill-item">BABOK</span>
                         <span class="skill-item">PMBOK</span>
@@ -229,50 +290,49 @@
                 </div>
 
                 <div class="skill-category">
-                    <h3>IT Service Management</h3>
+                    <h3>Technologies</h3>
                     <div class="skill-items">
-                        <span class="skill-item">ITIL</span>
-                        <span class="skill-item">TOGAF</span>
-                        <span class="skill-item">Change Management</span>
-                        <span class="skill-item">ISO 9001</span>
-                        <span class="skill-item">QMS</span>
-                        <span class="skill-item">KPI Management</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Technologies & Platforms</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Microsoft Azure</span>
-                        <span class="skill-item">Google Cloud</span>
                         <span class="skill-item">Java</span>
                         <span class="skill-item">SQL Server</span>
                         <span class="skill-item">Oracle</span>
                         <span class="skill-item">Microservices</span>
+                        <span class="skill-item">Kafka</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">REST API Endpoints</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Microsoft Azure</span>
+                        <span class="skill-item">Google Cloud</span>
+                        <span class="skill-item">Jira</span>
+                        <span class="skill-item">Confluence</span>
+                        <span class="skill-item">ChatGPT</span>
+                        <span class="skill-item">GPT-4</span>
+                        <span class="skill-item">Odoo</span>
+                        <span class="skill-item">AI</span>
+                        <span class="skill-item">bolt.new</span>
+                        <span class="skill-item">Cursor</span>
+                        <span class="skill-item">GoDaddy</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3>Business Domains</h3>
                     <div class="skill-items">
+                        <span class="skill-item">iGaming</span>
+                        <span class="skill-item">Crypto</span>
+                        <span class="skill-item">Fiat</span>
+                        <span class="skill-item">Blockchain</span>
+                        <span class="skill-item">KYC & AML</span>
                         <span class="skill-item">ERP</span>
                         <span class="skill-item">WMS</span>
                         <span class="skill-item">Supply Chain</span>
                         <span class="skill-item">eCommerce</span>
                         <span class="skill-item">Inventory Management</span>
                         <span class="skill-item">Data Analytics</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Jira</span>
-                        <span class="skill-item">Confluence</span>
-                        <span class="skill-item">ChatGPT</span>
-                        <span class="skill-item">GPT-4</span>
-                        <span class="skill-item">Kafka</span>
-                        <span class="skill-item">Odoo</span>
                     </div>
                 </div>
 
@@ -359,6 +419,13 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
+    <script type="module">
+        // Make environment variables available globally for the main script
+        if (typeof import.meta !== 'undefined' && import.meta.env) {
+            window.VITE_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+            window.VITE_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+        }
+    </script>
 </body>
 </html>

@@ -114,12 +114,56 @@ if (contactForm) {
             return;
         }
         
-        // Simulate form submission (replace with actual form handling)
-        showNotification('Thank you! Your message has been sent.', 'success');
-        this.reset();
+        // Show loading state
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        // Send email via Supabase Edge Function
+        sendContactEmail({ name, email, subject, message })
+            .then(() => {
+                showNotification('Thank you! Your message has been sent successfully.', 'success');
+                this.reset();
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+            })
+            .finally(() => {
+                // Reset button state
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            });
     });
 }
 
+// Function to send contact email via Supabase Edge Function
+async function sendContactEmail(formData) {
+    const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || 
+                       (typeof window !== 'undefined' && window.VITE_SUPABASE_URL);
+    
+    if (!supabaseUrl) {
+        throw new Error('Supabase URL not configured');
+    }
+    
+    const response = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env?.VITE_SUPABASE_ANON_KEY || 
+                            (typeof window !== 'undefined' && window.VITE_SUPABASE_ANON_KEY)}`,
+        },
+        body: JSON.stringify(formData),
+    });
+    
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send email');
+    }
+    
+    return await response.json();
+}
 // Email validation helper
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -256,7 +300,7 @@ style.textContent = `
     }
     
     .nav-link.active {
-        color: #6366f1;
+        color: #86efac;
     }
     
     .nav-link.active::after {
@@ -309,4 +353,3 @@ function addProjectCardHoverEffects() {
 
 // Initialize hover effects
 document.addEventListener('DOMContentLoaded', addProjectCardHoverEffects);
-
