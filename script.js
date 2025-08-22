@@ -94,25 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
+        // Let Formspree handle the submission
+        // Form will submit normally to Formspree
         
         // Show loading state
         const submitButton = this.querySelector('button[type="submit"]');
@@ -120,50 +103,16 @@ if (contactForm) {
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Send email via Supabase Edge Function
-        sendContactEmail({ name, email, subject, message })
-            .then(() => {
-                showNotification('Thank you! Your message has been sent successfully.', 'success');
-                this.reset();
-            })
-            .catch((error) => {
-                console.error('Error sending email:', error);
-                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
-            })
-            .finally(() => {
-                // Reset button state
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            });
+        // Reset button after a short delay (Formspree will handle the redirect)
+        setTimeout(() => {
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        }, 3000);
     });
 }
 
-// Function to send contact email via Supabase Edge Function
-async function sendContactEmail(formData) {
-    const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || 
-                       (typeof window !== 'undefined' && window.VITE_SUPABASE_URL);
-    
-    if (!supabaseUrl) {
-        throw new Error('Supabase URL not configured');
-    }
-    
-    const response = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env?.VITE_SUPABASE_ANON_KEY || 
-                            (typeof window !== 'undefined' && window.VITE_SUPABASE_ANON_KEY)}`,
-        },
-        body: JSON.stringify(formData),
-    });
-    
-    if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send email');
-    }
-    
-    return await response.json();
-}
+// Formspree handles email sending automatically
+// No additional code needed
 // Email validation helper
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

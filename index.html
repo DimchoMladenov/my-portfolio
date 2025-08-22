@@ -292,9 +292,7 @@
                 <div class="skill-category">
                     <h3>Technologies</h3>
                     <div class="skill-items">
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">SQL Server</span>
-                        <span class="skill-item">Oracle</span>
+                        <span class="skill-item">Databases</span>
                         <span class="skill-item">Microservices</span>
                         <span class="skill-item">Kafka</span>
                         <span class="skill-item">GitHub</span>
@@ -360,22 +358,6 @@
                     
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+359 879 124 649</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>dimchom@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
                             <i class="fab fa-linkedin"></i>
                             <div>
                                 <h4>LinkedIn</h4>
@@ -385,7 +367,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" action="https://formspree.io/f/xayzqkwe" method="POST" id="contactForm">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -419,14 +401,7 @@
         </div>
     </footer>
 
-    <script src="script.js" type="module"></script>
-    <script type="module">
-        // Make environment variables available globally for the main script
-        if (typeof import.meta !== 'undefined' && import.meta.env) {
-            window.VITE_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-            window.VITE_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
