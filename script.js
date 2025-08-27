@@ -91,28 +91,59 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        // Let Formspree handle the submission
-        // Form will submit normally to Formspree
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        // Initialize EmailJS
+        emailjs.init("YOUR_USER_ID"); // You'll need to replace this with your actual EmailJS user ID
         
-        // Show loading state
-        const submitButton = this.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
-        
-        // Reset button after a short delay (Formspree will handle the redirect)
-        setTimeout(() => {
-            submitButton.textContent = originalButtonText;
-            submitButton.disabled = false;
-        }, 3000);
-    });
-}
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // For now, just show a success message (since we don't have EmailJS configured yet)
+            setTimeout(() => {
+                showNotification('Message sent successfully! (Demo mode)', 'success');
+                contactForm.reset(); // Clear the form
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }, 1500);
+            
+            // Uncomment and configure this when you set up EmailJS:
+            /*
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    showNotification('Message sent successfully!', 'success');
+                    contactForm.reset();
+                }, function(error) {
+                    showNotification('Failed to send message. Please try again.', 'error');
+                })
+                .finally(() => {
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                });
+            */
+        });
+    } else {
+        console.error('Contact form not found!');
+    }
+});
 
-// Formspree handles email sending automatically
-// No additional code needed
 // Email validation helper
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
