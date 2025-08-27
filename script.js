@@ -95,20 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        // Initialize EmailJS
-        emailjs.init("YOUR_USER_ID"); // You'll need to replace this with your actual EmailJS user ID
-        
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-            
+            // Let the form submit normally to Web3Forms
+            // Just show loading state
             const submitButton = this.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
             
@@ -116,34 +105,19 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
             
-            // For now, just show a success message (since we don't have EmailJS configured yet)
+            // Reset button after form submission (Web3Forms will handle the redirect)
             setTimeout(() => {
-                showNotification('Message sent successfully! (Demo mode)', 'success');
-                contactForm.reset(); // Clear the form
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
-            }, 1500);
-            
-            // Uncomment and configure this when you set up EmailJS:
-            /*
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    showNotification('Message sent successfully!', 'success');
-                    contactForm.reset();
-                }, function(error) {
-                    showNotification('Failed to send message. Please try again.', 'error');
-                })
-                .finally(() => {
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                });
-            */
+            }, 3000);
         });
     } else {
         console.error('Contact form not found!');
     }
 });
 
+// Formspree handles email sending automatically
+// No additional code needed
 // Email validation helper
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
