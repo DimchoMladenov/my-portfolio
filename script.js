@@ -302,3 +302,4 @@ function addProjectCardHoverEffects() {
 
 // Initialize hover effects
 document.addEventListener('DOMContentLoaded', addProjectCardHoverEffects);
+

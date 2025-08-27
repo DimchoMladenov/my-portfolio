@@ -259,13 +259,22 @@ body {
 
 .btn-outline {
     background: transparent;
-    color: #86efac;
-    border: 2px solid #86efac;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
 }
 
 .btn-outline:hover {
-    background: #86efac;
+    background: #3b82f6;
     color: white;
+}
+
+.btn-outline i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-outline:hover i {
+    transform: translateX(3px);
 }
 
 /* Section Styles */
@@ -595,6 +604,8 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     border-left: 4px solid #bbf7d0;
+    display: flex;
+    flex-direction: column;
 }
 
 .article-card:hover {
@@ -645,6 +656,11 @@ section {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+}
+
+.article-card .btn-outline {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .tag {
@@ -862,6 +878,14 @@ section {
         font-size: 1rem;
     }
 }
+
+
+
+
+
+
+
+
 
 @media (max-width: 480px) {
     .hero {
